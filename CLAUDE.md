@@ -20,7 +20,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 인스타그램: @band._.haja — https://www.instagram.com/band._.haja/ — 공지사항을 여기에 올림. 팔로우를 요청하고, 문의도 여기로 받음.
 
 - 불참 시 가급적 일찍, 늦어도 24시간 전까지 알려달라는 주의사항이 있음 (사이트 RSVP 섹션, invitation.md 둘 다 들어 있음)
-- 참가 신청 폼: 사용자가 따로 만들 예정. 지금은 임시 링크 `https://www.naver.com`을 씀. 진짜 폼 링크를 받으면 `index.html`과 `invitation.md` 둘 다 바꿀 것.
+- 참가 신청 폼 (Google Forms): https://forms.gle/m7sKKtDTaMsMQVWb9 — `index.html`(히어로, RSVP, dock 3곳)과 `invitation.md`에 들어 있음. 바꿀 땐 둘 다 바꿀 것.
 
 **아직 정해지지 않은 것** (지어내지 말고, TODO로 남기거나 사용자에게 물어볼 것): 새 장소의 주차/흡연/루프탑 규칙, 정확한 종료 시각, 베스트 드레서 시상 시각.
 
