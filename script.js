@@ -59,7 +59,7 @@
       "SUMMARY:LET's HAJA — 하자밴드 할로윈 올나잇 파티",
       "LOCATION:용산 어썸그라운드",
       "URL:https://naver.me/5V8gEnor",
-      "DESCRIPTION:참가비 40\\,000원. 할로윈 의상 필수. 21:00 깜짝 공연. 새벽까지 Free Drink & Food.",
+      "DESCRIPTION:참가비 40\\,000원. 할로윈 의상 (선택). 21:00 깜짝 공연. 새벽까지 Free Drink & Food.",
       "END:VEVENT",
       "END:VCALENDAR"
     ].join("\r\n");
@@ -92,6 +92,45 @@
       );
     }
   });
+
+  /* ---------- last year sketch slider ---------- */
+  var track = document.getElementById("sketchTrack");
+  var slides = track.children;
+  var now = document.getElementById("sketchNow");
+  var btns = document.querySelectorAll(".sketch__btn");
+
+  function currentSlide() {
+    var x = track.scrollLeft;
+    var best = 0;
+    for (var i = 1; i < slides.length; i++) {
+      if (Math.abs(slides[i].offsetLeft - slides[0].offsetLeft - x) <
+          Math.abs(slides[best].offsetLeft - slides[0].offsetLeft - x)) best = i;
+    }
+    // last slide can't snap to start, so treat "scrolled to the end" as last
+    if (x + track.clientWidth >= track.scrollWidth - 2) best = slides.length - 1;
+    return best;
+  }
+
+  function syncSketch() {
+    var i = currentSlide();
+    now.textContent = pad(i + 1);
+    btns[0].disabled = i === 0;
+    btns[1].disabled = i === slides.length - 1;
+  }
+
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var i = Math.max(0, Math.min(slides.length - 1, currentSlide() + Number(btn.dataset.dir)));
+      track.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: "smooth" });
+    });
+  });
+
+  var sketchRaf;
+  track.addEventListener("scroll", function () {
+    cancelAnimationFrame(sketchRaf);
+    sketchRaf = requestAnimationFrame(syncSketch);
+  }, { passive: true });
+  syncSketch();
 
   if (!("IntersectionObserver" in window)) {
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });

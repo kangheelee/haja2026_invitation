@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 일시: 2026.10.31 (Sat) 20:00 시작 ~ 다음날 새벽
 - 장소: 용산 어썸그라운드 — https://naver.me/5V8gEnor
 - 참가비: 40,000원
-- 컨셉: 할로윈. 할로윈 의상을 입고 오기
+- 컨셉: 할로윈. 할로윈 의상은 선택 (필수 아님)
 - 21:00 깜짝 공연
 - 베스트 드레서상 있음
 - 다음날 새벽까지 Free Drink & Food

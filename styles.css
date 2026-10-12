@@ -503,6 +503,95 @@ ol { list-style: none; }
   color: var(--color-slate);
 }
 
+.dress__tag {
+  display: inline-block;
+  margin-top: var(--space-lg);
+  padding: 4px 8px;
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-xs);
+  font: 500 11px/1.2 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+.dress__tag + .dress__copy { margin-top: var(--space-sm); }
+
+/* ---------- last year sketch (scroll-snap slider; works without JS) ---------- */
+.sketch__track {
+  display: flex;
+  gap: var(--space-sm);
+  margin: var(--space-xl) calc(var(--gutter) * -1) 0;
+  padding: 0 var(--gutter);
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--gutter);
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.sketch__track::-webkit-scrollbar { display: none; }
+.sketch__slide {
+  position: relative;
+  flex: 0 0 84%;
+  aspect-ratio: 4 / 5;
+  scroll-snap-align: start;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.sketch__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sketch__slide::after {
+  content: "";
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(to top, rgba(11, 10, 9, 0.75), transparent);
+  pointer-events: none;
+}
+.sketch__cap {
+  position: absolute;
+  left: var(--space-md);
+  bottom: var(--space-md);
+  z-index: 1;
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+.sketch__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-md);
+}
+.sketch__count {
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  color: var(--color-steel);
+}
+.sketch__count b { color: var(--color-ink); font-weight: 700; }
+.sketch__btns { display: flex; gap: var(--space-xs); }
+.sketch__btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+.sketch__btn:active { background: var(--color-surface-2); }
+.sketch__btn:disabled { opacity: 0.3; cursor: default; }
+.sketch__btn .i { transform: rotate(45deg); }
+.sketch__btn[data-dir="-1"] .i { transform: rotate(-135deg); }
+
 /* ---------- apply (the one loud block) ---------- */
 .apply {
   position: relative;
