@@ -533,7 +533,7 @@ ol { list-style: none; }
 .sketch__slide {
   position: relative;
   flex: 0 0 84%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
   overflow: hidden;
